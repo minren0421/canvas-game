@@ -20,6 +20,9 @@ function momFruitsCollison(){
                     type = 2;
                 }
                 data.add(type);
+                // 調用顯示光環方法
+                wave.born(fruit.x[i],fruit.y[i]);
+                
             }
         }
     }

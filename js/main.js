@@ -24,7 +24,8 @@ var mx = 0;
 var my = 0;
 // 1.10 創建全局保存分數
 var data;
-
+// 1.11 創建全局保存光環
+var wave;
 
 
 // 2.創建函數 game
@@ -67,7 +68,9 @@ function init(){
     can1.addEventListener("mousemove",handlemove);
     // 3.12 創建分數對象
     data = new dataObj; 
-
+    // 3.13 創建光環對象
+    wave = new waveObj;
+    wave.init();
 }
 // 4.創建函數gameloop
 function gameloop(){
@@ -97,6 +100,8 @@ function gameloop(){
     mom.draw();
     // 4.9 繪製分數
     data.draw();
+    // 4.10 繪製光環
+    wave.draw();
 
 }
 // 5.當網頁加載成功後調用 game
