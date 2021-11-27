@@ -69,7 +69,7 @@ momObj.prototype.draw = function(){
             this.bigEyeEnd = 300;
         }
     }
-    // 大魚尾巴切換
+    //3.2 大魚尾巴切換
     this.bigTailStart+=deltaTime ;
     if(this.bigTailStart>this.bigTailEnd){
         // 切換尾巴下標
@@ -77,7 +77,7 @@ momObj.prototype.draw = function(){
         // 將計時清零
         this.bigTailStart = 0;
     }
-    // 大魚身體切換
+    //3.3大魚身體切換
     this.bigBodyStart+=deltaTime ;
     if(this.bigBodyStart>this.bigBodyEnd){
         // 切換尾巴下標
@@ -88,6 +88,16 @@ momObj.prototype.draw = function(){
     // 將鼠標位置賦值大魚座標
     this.x = lerpDistance(mx,this.x,0.96);
     this.y = lerpDistance(my,this.y,0.97);
+
+    //3.4 修改大魚游動角度
+    //  (1) 算大魚跟鼠標之間座標
+    var deltaY = my - this.y;
+    var deltaX = mx - this.x;
+    //  (2) 大魚跟鼠標之間角度
+    var beta = Math.atan2(deltaY,deltaX)+Math.PI;
+    //  (3) 大魚向鼠標角度慢慢調整
+    this.angle = lerpAngle(beta,this.angle,0.9);
+
 
     // 保存畫筆
     ctx1.save();
