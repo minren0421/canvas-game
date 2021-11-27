@@ -86,8 +86,8 @@ momObj.prototype.draw = function(){
         this.bigBodyStart = 0;
     }
     // 將鼠標位置賦值大魚座標
-    this.x = lerpDistance(mx,this.x,0.98);
-    this.y = lerpDistance(my,this.y,0.99);
+    this.x = lerpDistance(mx,this.x,0.96);
+    this.y = lerpDistance(my,this.y,0.97);
 
     // 保存畫筆
     ctx1.save();

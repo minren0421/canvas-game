@@ -77,6 +77,9 @@ function gameloop(){
     lastTime = now;
     // 4.5 繪製背景圖
     ctx2.drawImage(bgPic,0,0);
+    // 4.5.1 調用大魚碰撞食物方法
+    momFruitsCollison();
+
     // 4.6 繪製海葵
     ane.draw();
     // 4.6.1 調用監聽畫布函數

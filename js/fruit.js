@@ -69,7 +69,7 @@ fruitObj.prototype.draw = function(){
    }//end for
 
 }
-
+// 5.
 function fruitMonitor(){
     var num = 0;
     for(var i=0;i<fruit.num;i++){
@@ -89,6 +89,7 @@ function sendFruit(){
     }
 }
 
+// 6.
 fruitObj.prototype.born = function(i){
     var idx = Math.floor(ane.num*Math.random());
     // 獲取海葵終點座標
@@ -104,4 +105,11 @@ fruitObj.prototype.born = function(i){
     this.fruitType[i] = Math.random()<0.9?"blue":"orange";
     this.spd[i] = Math.random()*0.017;
 }
+
+// 程序原則:自己數據自己修改
+// 7.為構造函數添加食物消失方法
+fruitObj.prototype.dead = function(i){
+    this.alive[i] = false;
+}
+
 
