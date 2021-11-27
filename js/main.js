@@ -22,6 +22,9 @@ var mom;
 // 1.9 創建全局保存鼠標位置
 var mx = 0;
 var my = 0;
+// 1.10 創建全局保存分數
+var data;
+
 
 
 // 2.創建函數 game
@@ -62,6 +65,8 @@ function init(){
     mom.init();
     // 3.11 在畫布一上綁定鼠標移動事件
     can1.addEventListener("mousemove",handlemove);
+    // 3.12 創建分數對象
+    data = new dataObj; 
 
 }
 // 4.創建函數gameloop
@@ -90,6 +95,8 @@ function gameloop(){
     ctx1.clearRect(0,0,canWidth,canHeight)
     // 4.8 繪製大魚
     mom.draw();
+    // 4.9 繪製分數
+    data.draw();
 
 }
 // 5.當網頁加載成功後調用 game

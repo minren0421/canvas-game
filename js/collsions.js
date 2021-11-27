@@ -13,6 +13,13 @@ function momFruitsCollison(){
                 // 食物消失
                 // fruit.alive[i] = false;
                 fruit.dead(i);
+                // 累加分數
+                // 1.判斷當前住類型
+                var type = 1;
+                if(fruit.fruitType[i]!="blue"){
+                    type = 2;
+                }
+                data.add(type);
             }
         }
     }
