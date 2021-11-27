@@ -15,6 +15,13 @@ var deltaTime;
 var bgPic;
 // 1.6 創建全局保存海葵對象
 var ane;
+// 1.7 創建全局保存食物對象
+var fruit;
+// 1.8 創建全局保存大魚對象
+var mom;
+// 1.9 創建全局保存鼠標位置
+var mx = 0;
+var my = 0;
 
 
 // 2.創建函數 game
@@ -47,6 +54,14 @@ function init(){
     // 3.8 創建海葵對象並調用
     ane = new aneObj();
     ane.init();
+    // 3.9 創建食物對象調用
+    fruit = new fruitObj();
+    fruit.init();
+    // 3.10 創建大魚對象
+    mom = new momObj();
+    mom.init();
+    // 3.11 在畫布一上綁定鼠標移動事件
+    can1.addEventListener("mousemove",handlemove);
 
 }
 // 4.創建函數gameloop
@@ -64,7 +79,24 @@ function gameloop(){
     ctx2.drawImage(bgPic,0,0);
     // 4.6 繪製海葵
     ane.draw();
+    // 4.6.1 調用監聽畫布函數
+    fruitMonitor();
+    // 4.7 繪製食物
+    fruit.draw();
+    // 4.7.1 清除畫布一所有元素
+    ctx1.clearRect(0,0,canWidth,canHeight)
+    // 4.8 繪製大魚
+    mom.draw();
 
 }
 // 5.當網頁加載成功後調用 game
 document.body.onload = game ;
+
+// 6. 創建函數處理鼠標移動事件
+function handlemove(event){
+    // 獲取鼠標座標
+    mx = event.offsetX ;
+    my = event.offsetY ;
+}
+
+
