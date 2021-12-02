@@ -50,7 +50,7 @@ waveObj.prototype.born = function(x,y){
             this.x[i] = x;
             this.y[i] = y;
             this.r[i] = 10;
-            return;
+            return; //一次只產生一個
         }
     }
 
